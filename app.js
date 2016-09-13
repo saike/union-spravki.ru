@@ -12,8 +12,8 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.engine('html', swig.renderFile);
-app.set('view engine', 'html');
+app.engine('swig', swig.renderFile);
+app.set('view engine', 'swig');
 app.set('views', path.join(__dirname, 'views'));
 
 // uncomment after placing your favicon in /public

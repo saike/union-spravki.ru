@@ -8,6 +8,18 @@ var app = require('../app');
 var debug = require('debug')('union-spravki.ru:server');
 var http = require('http');
 
+// var http_proxy = require('http-proxy');
+//
+// var proxy_server = http_proxy.createServer ({
+//     hostnameOnly: true,
+//     router: {
+//       'union-spravki.ru': '127.0.0.1:81',
+//       '127.0.0.1':        '127.0.0.1:83'
+//     }
+//   });
+
+// proxy_server.listen(80);
+
 /**
  * Get port from environment and store in Express.
  */
