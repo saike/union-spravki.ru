@@ -3,18 +3,33 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "node ./bin/www",
-    "start": "forever start ./bin/www",
-    "stop": "forever stop ./bin/www"
+    "dev": "gulp",
+    "start": "forever start ./dist/boot.js",
+    "restart": "forever restart ./dist/boot.js",
+    "stop": "forever stop ./dist/boot.js"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
+    "bootstrap": "latest",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "~4.13.4",
+    "forever-monitor": "^1.7.0",
     "http-proxy": "^1.14.0",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
     "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "gulp": "^3.9.1",
+    "gulp-live-server": "0.0.30",
+    "gulp-shell": "^0.5.2",
+    "gulp-watch": "^4.3.9",
+    "rimraf": "^2.5.4",
+    "run-sequence": "^1.2.2"
   }
 }

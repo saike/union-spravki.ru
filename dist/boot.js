@@ -1,37 +1,37 @@
 #!/usr/bin/env node
+'use strict';
 
-/**
- * Module dependencies.
- */
+var _app = require('./app');
 
-var app = require('../app');
-var debug = require('debug')('union-spravki.ru:server');
-var http = require('http');
+var _app2 = _interopRequireDefault(_app);
 
-// var http_proxy = require('http-proxy');
-//
-// var proxy_server = http_proxy.createServer ({
-//     hostnameOnly: true,
-//     router: {
-//       'union-spravki.ru': '127.0.0.1:81',
-//       '127.0.0.1':        '127.0.0.1:83'
-//     }
-//   });
+var _debug = require('debug');
 
-// proxy_server.listen(80);
+var _debug2 = _interopRequireDefault(_debug);
+
+var _http = require('http');
+
+var _http2 = _interopRequireDefault(_http);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _debug2.default)('union-spravki.ru:server');
 
 /**
  * Get port from environment and store in Express.
  */
 
+/**
+ * Module dependencies.
+ */
 var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+_app2.default.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = _http2.default.createServer(_app2.default);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -70,9 +70,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -95,8 +93,6 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  (0, _debug2.default)('Listening on ' + bind);
 }
