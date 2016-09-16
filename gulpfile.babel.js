@@ -10,8 +10,8 @@ const paths = {
     src: [ './src/**/*.js' ],
     dist: './dist'
   },
-  swig: {
-    src: [ './src/views/**/*.swig' ],
+  twig: {
+    src: [ './src/views/**/*.twig' ],
     dist:  './dist/views'
   },
   bin: './dist/boot.js'
@@ -34,8 +34,8 @@ gulp.task('babel', shell.task([
 ]));
 
 gulp.task('templates', () => {
-  gulp.src(paths.swig.src)
-    .pipe(gulp.dest(paths.swig.dist));
+  gulp.src(paths.twig.src)
+    .pipe(gulp.dest(paths.twig.dist));
 });
 
 let express_server;
@@ -50,7 +50,7 @@ gulp.task('restart', () => {
 });
 
 gulp.task('watch', () => {
-  return watch(paths.js.src.concat(paths.swig.src), () => {
+  return watch(paths.js.src.concat(paths.twig.src), () => {
     gulp.start('build');
   })
 });

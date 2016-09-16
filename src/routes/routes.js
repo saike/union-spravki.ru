@@ -37,6 +37,18 @@ export const routes = [
     name: 'Стоимость услуг',
     url: '/price',
     template: 'routes/price'
+  },
+  {
+    id: 'dostavka',
+    name: 'Доставка',
+    url: '/dostavka',
+    template: 'routes/dostavka'
+  },
+  {
+    id: 'contacts',
+    name: 'Контакты',
+    url: '/contacts',
+    template: 'routes/contacts'
   }
 ];
 

@@ -4,20 +4,24 @@ import path from 'path';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import swig from 'swig';
-import _ from 'lodash';
+import Twig from 'twig';
+import fs from 'fs';
 
 import routes from './routes/routes';
 
 import './tools/tools'
 
-import { GlobalTemplateContext } from './tools/templates';
-
 var app = express();
 
 // view engine setup
-app.engine('swig', swig.renderFile);
-app.set('view engine', 'swig');
+app.engine('twig', Twig.renderFile);
+app.set('view engine', 'twig');
+
+// This section is optional and used to configure twig.
+app.set("twig options", {
+  strict_variables: false
+});
+
 app.set('views', path.join(__dirname, 'views'));
 
 // uncomment after placing your favicon in /public
@@ -26,12 +30,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/libs', express.static(path.join(__dirname, '..', 'node_modules')));
 
-app.use(function (req, res, next) {
-  _.merge(res.locals, GlobalTemplateContext.context);
-  console.log(res.locals);
+const config = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'config.json'), 'utf8'));
+
+app.use((req, res, next) => {
+  res.locals.CONFIG = config;
   next();
 });
 

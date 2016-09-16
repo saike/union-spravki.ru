@@ -16,8 +16,8 @@
           <h3 style="margin: 0 0 20px 0;">
             <span style="background-color: rgba(255,255,255,0.8); padding: 4px; border-radius: 4px;">
               <i class="glyphicon glyphicon-phone"></i>
-              <a href="tel:7-985-559-0197" class="text-danger">
-                <span>+7 (985) 559-01-97</span>
+              <a href="tel:{{ CONFIG.phone }}" class="text-danger">
+                <span>{{ CONFIG.phone }}</span>
               </a>
             </span>
           </h3>
@@ -36,8 +36,8 @@
           <h3 style="margin: 0 0 20px 0;">
             <span style="background-color: rgba(255,255,255,0.8); padding: 4px; border-radius: 4px;">
               <i class="glyphicon glyphicon-envelope"></i>
-              <a href="mailto:union-spravki@yandex.ru?Subject=Заказ%20справки" target="_top" class="text-danger">
-                <span>union-spravki@yandex.ru</span>
+              <a href="mailto:{{ CONFIG.email }}?Subject={{ CONFIG.email_subject | escape }}" target="_top" class="text-danger">
+                <span>{{ CONFIG.email }}</span>
               </a>
             </span>
           </h3>

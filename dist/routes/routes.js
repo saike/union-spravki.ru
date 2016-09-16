@@ -45,6 +45,16 @@ const routes = exports.routes = [{
   name: 'Стоимость услуг',
   url: '/price',
   template: 'routes/price'
+}, {
+  id: 'dostavka',
+  name: 'Доставка',
+  url: '/dostavka',
+  template: 'routes/dostavka'
+}, {
+  id: 'contacts',
+  name: 'Контакты',
+  url: '/contacts',
+  template: 'routes/contacts'
 }];
 
 var router = _express2.default.Router();

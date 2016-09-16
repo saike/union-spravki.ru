@@ -24,13 +24,13 @@ var _bodyParser = require('body-parser');
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
-var _swig = require('swig');
+var _twig = require('twig');
 
-var _swig2 = _interopRequireDefault(_swig);
+var _twig2 = _interopRequireDefault(_twig);
 
-var _lodash = require('lodash');
+var _fs = require('fs');
 
-var _lodash2 = _interopRequireDefault(_lodash);
+var _fs2 = _interopRequireDefault(_fs);
 
 var _routes = require('./routes/routes');
 
@@ -38,16 +38,21 @@ var _routes2 = _interopRequireDefault(_routes);
 
 require('./tools/tools');
 
-var _templates = require('./tools/templates');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import favicon from 'serve-favicon';
 var app = (0, _express2.default)();
 
 // view engine setup
-app.engine('swig', _swig2.default.renderFile);
-app.set('view engine', 'swig');
+
+// import favicon from 'serve-favicon';
+app.engine('twig', _twig2.default.renderFile);
+app.set('view engine', 'twig');
+
+// This section is optional and used to configure twig.
+app.set("twig options", {
+  strict_variables: false
+});
+
 app.set('views', _path2.default.join(__dirname, 'views'));
 
 // uncomment after placing your favicon in /public
@@ -56,12 +61,14 @@ app.use((0, _morgan2.default)('dev'));
 app.use(_bodyParser2.default.json());
 app.use(_bodyParser2.default.urlencoded({ extended: false }));
 app.use((0, _cookieParser2.default)());
+
 app.use(_express2.default.static(_path2.default.join(__dirname, '..', 'public')));
 app.use('/libs', _express2.default.static(_path2.default.join(__dirname, '..', 'node_modules')));
 
-app.use(function (req, res, next) {
-  _lodash2.default.merge(res.locals, _templates.GlobalTemplateContext.context);
-  console.log(res.locals);
+const config = JSON.parse(_fs2.default.readFileSync(_path2.default.join(__dirname, '..', 'config', 'config.json'), 'utf8'));
+
+app.use((req, res, next) => {
+  res.locals.CONFIG = config;
   next();
 });
 
