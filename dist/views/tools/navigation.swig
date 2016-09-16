@@ -1,0 +1,11 @@
+<nav class="navbar no-collapse navbar-default" role="navigation">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      {% for _route in routes %}
+        <li class="{% if _route.id === route.id %}active{% endif %}">
+          <a href="{{ _route.url }}">{{ _route.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

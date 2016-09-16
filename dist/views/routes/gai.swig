@@ -1,0 +1,17 @@
+{% extends '../layout.swig' %}
+
+{% block title %}Справка в ГАИ{% endblock %}
+
+{% block body %}
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          Справка в ГАИ
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

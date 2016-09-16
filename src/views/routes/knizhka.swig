@@ -1,0 +1,17 @@
+{% extends '../layout.swig' %}
+
+{% block title %}Медицинская книжка{% endblock %}
+
+{% block body %}
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          Мед книжка
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -24,12 +28,21 @@ var _swig = require('swig');
 
 var _swig2 = _interopRequireDefault(_swig);
 
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _routes = require('./routes/routes');
+
+var _routes2 = _interopRequireDefault(_routes);
+
+require('./tools/tools');
+
+var _templates = require('./tools/templates');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import favicon from 'serve-favicon';
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
 var app = (0, _express2.default)();
 
 // view engine setup
@@ -46,8 +59,13 @@ app.use((0, _cookieParser2.default)());
 app.use(_express2.default.static(_path2.default.join(__dirname, '..', 'public')));
 app.use('/libs', _express2.default.static(_path2.default.join(__dirname, '..', 'node_modules')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use(function (req, res, next) {
+  _lodash2.default.merge(res.locals, _templates.GlobalTemplateContext.context);
+  console.log(res.locals);
+  next();
+});
+
+app.use('/', _routes2.default);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -80,4 +98,4 @@ app.use(function (err, req, res, next) {
   });
 });
 
-module.exports = app;
+exports.default = app;

@@ -5,9 +5,13 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import swig from 'swig';
+import _ from 'lodash';
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+import routes from './routes/routes';
+
+import './tools/tools'
+
+import { GlobalTemplateContext } from './tools/templates';
 
 var app = express();
 
@@ -25,8 +29,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/libs', express.static(path.join(__dirname, '..', 'node_modules')));
 
+app.use(function (req, res, next) {
+  _.merge(res.locals, GlobalTemplateContext.context);
+  console.log(res.locals);
+  next();
+});
+
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -59,5 +68,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
-module.exports = app;
+export default app;

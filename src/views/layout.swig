@@ -4,15 +4,17 @@
       lang="ru">
 <head>
   <meta charset="utf-8" />
-  <title>{% block title %}{% endblock %} - Example</title>
-  <link rel="icon" type="image/png" href="public/favicon.png" />
+  <title>Все медицинские справки за один день! {% block title %}{% endblock %}</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <!-- load css libs -->
-  <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
 
 </head>
 <body>
 
 {% include 'tools/header.swig' %}
+
+{% include 'tools/navigation.swig' %}
 
 {#<header>#}
   {#<h1>{% block title %}{% endblock %}</h1>#}
