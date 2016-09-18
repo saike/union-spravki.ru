@@ -1,6 +1,9 @@
 .no_wrap {
   white-space: nowrap;
 }
+.ib {
+  display: inline-block;
+}
 
 .pr0 {
   padding-right: 0px !important;
