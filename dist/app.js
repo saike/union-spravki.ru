@@ -32,19 +32,26 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+require('./core/core');
+
+require('./tools/tools');
+
 var _routes = require('./routes/routes');
 
 var _routes2 = _interopRequireDefault(_routes);
 
-require('./tools/tools');
+var _templates = require('./core/templates');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import favicon from 'serve-favicon';
 var app = (0, _express2.default)();
 
 // view engine setup
-
-// import favicon from 'serve-favicon';
 app.engine('twig', _twig2.default.renderFile);
 app.set('view engine', 'twig');
 
@@ -68,6 +75,7 @@ app.use('/libs', _express2.default.static(_path2.default.join(__dirname, '..', '
 const config = JSON.parse(_fs2.default.readFileSync(_path2.default.join(__dirname, '..', 'config', 'config.json'), 'utf8'));
 
 app.use((req, res, next) => {
+  _lodash2.default.merge(res.locals, _templates.GlobalTemplateContext);
   res.locals.CONFIG = config;
   next();
 });

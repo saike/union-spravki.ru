@@ -1,0 +1,49 @@
+<section class="sale p20">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="sale_header">
+        <h3>Горячие</h3>
+        <h2>Предложения</h2>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+
+      <div class="badge mt20">
+
+        <h4 class="m0">Для корпоративных <br> клиентов - скидки!</h4>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+      <p class="lead mt20">
+        При офомлении 10 медкнижек
+      </p>
+
+      <h3>
+        СКИДКА <span class="text-danger">10%</span>
+      </h3>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    {% for product in sale %}
+      <div class="col-md-3">
+        <a href="{{ product.url }}">
+          <div class="sale_product">
+            <img class="w100" src="{{ product.image }}" alt="{{ product.name }}">
+            <p class="lead mb0 text-center">
+              {{ product.name }}
+            </p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>

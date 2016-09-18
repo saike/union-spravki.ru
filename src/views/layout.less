@@ -1,0 +1,48 @@
+@import "mixins";
+
+@offsets: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
+
+.for(@offsets, {
+  .pr@{value} {
+    padding-right: @value+0px !important;
+  }
+  .pl@{value} {
+    padding-left: @value+0px !important;
+  }
+  .pt@{value} {
+    padding-top: @value+0px !important;
+  }
+  .pb@{value} {
+    padding-bottom: @value+0px !important;
+  }
+
+  .p@{value} {
+    padding: @value+0px !important;
+  }
+
+  .mr@{value} {
+    margin-right: @value+0px !important;
+  }
+  .ml@{value} {
+    margin-left: @value+0px !important;
+  }
+  .mt@{value} {
+    margin-top: @value+0px !important;
+  }
+  .mb@{value} {
+    margin-bottom: @value+0px !important;
+  }
+
+  .m@{value} {
+    margin: @value+0px !important;
+  }
+});
+
+@width: 0, 10, 20, 25, 33, 30, 40, 50, 60, 66, 70, 75, 80, 90, 100;
+
+.for(@width, {
+  .w@{value} {
+    width: @value+0% !important;
+  }
+});
+

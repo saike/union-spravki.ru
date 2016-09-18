@@ -8,7 +8,34 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          Вы не можете связаться с нами, никак
+          <h2>КОНТАКТЫ</h2>
+          <h3>
+            ООО «Юнионмед»
+          </h3>
+          <p class="lead">
+            107023, г. Москва, ул. Малая Семеновская, д.9, стр.3
+          </p>
+          <p>
+            Шаговая доступность от метро Электрозаводская и Семеновская, прекрасная транспортная доступность с основных магистралей города
+            (ТТК, шоссе Энтузиастов, Щелковское шоссе, набережная Яузы, центр).
+          </p>
+
+          <h4 class="mt30">
+            <span>
+              <i class="glyphicon glyphicon-phone"></i>
+              <a href="tel:{{ CONFIG.phone }}" class="text-danger">
+                <span>{{ CONFIG.phone }}</span>
+              </a>
+            </span>
+          </h4>
+          <h4>
+            <span>
+              <i class="glyphicon glyphicon-envelope"></i>
+              <a href="mailto:{{ CONFIG.email }}?Subject={{ CONFIG.email_subject | escape }}" target="_top" class="text-danger">
+                <span>{{ CONFIG.email }}</span>
+              </a>
+            </span>
+          </h4>
         </div>
       </div>
     </div>

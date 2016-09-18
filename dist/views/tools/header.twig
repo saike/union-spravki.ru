@@ -13,14 +13,14 @@
       <div class="col-md-3 text-right">
         <div class="phone">
 
-          <h3 style="margin: 0 0 20px 0;">
-            <span style="background-color: rgba(255,255,255,0.8); padding: 4px; border-radius: 4px;">
+          <h4>
+            <span>
               <i class="glyphicon glyphicon-phone"></i>
               <a href="tel:{{ CONFIG.phone }}" class="text-danger">
                 <span>{{ CONFIG.phone }}</span>
               </a>
             </span>
-          </h3>
+          </h4>
 
           {#<a href="#order" class="btn btn-lg btn-primary">#}
             {#<i class="glyphicon glyphicon-shopping-cart" style="vertical-align: top; margin-top: 1px; margin-right: 8px;"></i>#}
@@ -33,14 +33,14 @@
       <div class="col-md-3 text-right">
         <div class="email">
 
-          <h3 style="margin: 0 0 20px 0;">
-            <span style="background-color: rgba(255,255,255,0.8); padding: 4px; border-radius: 4px;">
+          <h4>
+            <span>
               <i class="glyphicon glyphicon-envelope"></i>
               <a href="mailto:{{ CONFIG.email }}?Subject={{ CONFIG.email_subject | escape }}" target="_top" class="text-danger">
                 <span>{{ CONFIG.email }}</span>
               </a>
             </span>
-          </h3>
+          </h4>
 
           {#<a href="#order" class="btn btn-lg btn-primary">#}
           {#<i class="glyphicon glyphicon-shopping-cart" style="vertical-align: top; margin-top: 1px; margin-right: 8px;"></i>#}
@@ -50,11 +50,17 @@
 
       </div>
 
-      <div class="col-md-3">
-        <p class="lead" style="background-color: rgba(255,255,255,0.8); padding: 4px; border-radius: 4px;">
+      <div class="col-md-2">
+        <p class="lead">
           Часы работы: <br>
           с 9:00 до 20:00 пн.-пт.
         </p>
+      </div>
+
+      <div class="col-md-1">
+        <a href="/zakaz" class="btn btn-primary btn-lg">
+          <i class="glyphicon glyphicon-shopping-cart" style="margin-right: 8px;"></i>ЗАКАЗАТЬ
+        </a>
       </div>
 
     </div>

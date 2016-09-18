@@ -1,5 +1,6 @@
 import express from 'express';
 import _ from 'lodash';
+import { GlobalTemplateContext } from '../core/templates';
 
 export const routes = [
   {
@@ -42,7 +43,8 @@ export const routes = [
     id: 'dostavka',
     name: 'Доставка',
     url: '/dostavka',
-    template: 'routes/dostavka'
+    template: 'routes/dostavka',
+    type: 'special'
   },
   {
     id: 'contacts',
@@ -58,9 +60,9 @@ _.each(routes, function (route) {
 
   router.get(route.url, function(req, res, next) {
     console.log('Route: ', route.id, route.url);
-    res.locals.routes = routes;
-    res.locals.route = route;
-    console.log(res.locals);
+    GlobalTemplateContext.routes = routes;
+    GlobalTemplateContext.route = route;
+    _.merge(res.locals, GlobalTemplateContext);
     res.render(route.template, { });
   });
 

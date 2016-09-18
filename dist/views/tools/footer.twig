@@ -1,8 +1,45 @@
-<footer class="footer">
+<footer class="footer mt40 pb40 pt40 bg-success">
 
   <div class="container">
     <div class="row">
-
+      <div class="col-md-3">
+        <p>
+          <a href="/" class="w100">
+            <img class="w100" src="img/logo.png" alt="">
+          </a>
+        </p>
+        <div>
+          <h3 class="no_wrap">
+            <i class="glyphicon glyphicon-phone"></i>
+            <a href="tel:{{ CONFIG.phone }}" class="text-danger">
+              <span>{{ CONFIG.phone }}</span>
+            </a>
+          </h3>
+          <h4 class="no_wrap">
+            <i class="glyphicon glyphicon-envelope"></i>
+            <a href="mailto:{{ CONFIG.email }}?Subject={{ CONFIG.email_subject | escape }}" target="_top" class="text-danger">
+              <span>{{ CONFIG.email }}</span>
+            </a>
+          </h4>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p class="lead">
+          Часы работы: <br>
+          с 9:00 до 20:00 пн.-пт.
+        </p>
+      </div>
+      <div class="col-md-7">
+        <div class="footer-nav">
+          <ul class="list-inline">
+            {% for _route in routes %}
+              <li class="{% if _route.id == route.id %}active{% endif %}">
+                <a class="{{ _route.type }} " href="{{ _route.url }}">{{ _route.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 

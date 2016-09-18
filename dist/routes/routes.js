@@ -13,6 +13,8 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
+var _templates = require('../core/templates');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const routes = exports.routes = [{
@@ -49,7 +51,8 @@ const routes = exports.routes = [{
   id: 'dostavka',
   name: 'Доставка',
   url: '/dostavka',
-  template: 'routes/dostavka'
+  template: 'routes/dostavka',
+  type: 'special'
 }, {
   id: 'contacts',
   name: 'Контакты',
@@ -63,9 +66,9 @@ _lodash2.default.each(routes, function (route) {
 
   router.get(route.url, function (req, res, next) {
     console.log('Route: ', route.id, route.url);
-    res.locals.routes = routes;
-    res.locals.route = route;
-    console.log(res.locals);
+    _templates.GlobalTemplateContext.routes = routes;
+    _templates.GlobalTemplateContext.route = route;
+    _lodash2.default.merge(res.locals, _templates.GlobalTemplateContext);
     res.render(route.template, {});
   });
 });

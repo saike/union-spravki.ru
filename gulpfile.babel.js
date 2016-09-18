@@ -4,6 +4,8 @@ import rimraf from 'rimraf';
 import run from 'run-sequence';
 import watch from 'gulp-watch';
 import server from 'gulp-live-server';
+import less from 'gulp-less';
+import concat from 'gulp-concat';
 
 const paths = {
   js: {
@@ -14,6 +16,10 @@ const paths = {
     src: [ './src/views/**/*.twig' ],
     dist:  './dist/views'
   },
+  less: {
+    src: [ './src/views/**/*.less' ],
+    dist:  './public/css'
+  },
   bin: './dist/boot.js'
 };
 
@@ -22,7 +28,7 @@ gulp.task('default', (callback) => {
 });
 
 gulp.task('build', (callback) => {
-  run('clean', 'babel', 'templates', 'restart', callback);
+  run('clean', 'babel', 'templates', 'less', 'restart', callback);
 });
 
 gulp.task('clean', (callback) => {
@@ -38,6 +44,13 @@ gulp.task('templates', () => {
     .pipe(gulp.dest(paths.twig.dist));
 });
 
+gulp.task('less', () => {
+  gulp.src(paths.less.src)
+    .pipe(less())
+    .pipe(concat('union-spravki.css'))
+    .pipe(gulp.dest(paths.less.dist));
+});
+
 let express_server;
 
 gulp.task('server', () => {
@@ -50,7 +63,7 @@ gulp.task('restart', () => {
 });
 
 gulp.task('watch', () => {
-  return watch(paths.js.src.concat(paths.twig.src), () => {
+  return watch(paths.js.src.concat(paths.twig.src).concat(paths.less.src), () => {
     gulp.start('build');
   })
 });

@@ -6,10 +6,14 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import Twig from 'twig';
 import fs from 'fs';
+import _ from 'lodash';
+
+import './core/core';
+import './tools/tools';
 
 import routes from './routes/routes';
 
-import './tools/tools'
+import { GlobalTemplateContext } from './core/templates';
 
 var app = express();
 
@@ -37,6 +41,7 @@ app.use('/libs', express.static(path.join(__dirname, '..', 'node_modules')));
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'config.json'), 'utf8'));
 
 app.use((req, res, next) => {
+  _.merge(res.locals, GlobalTemplateContext);
   res.locals.CONFIG = config;
   next();
 });

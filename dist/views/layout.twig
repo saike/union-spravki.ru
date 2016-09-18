@@ -4,10 +4,13 @@
       lang="ru">
 <head>
   <meta charset="utf-8" />
-  <title>Все медицинские справки за один день! {% block title %}{% endblock %}</title>
+  <title>{% block title %}{% endblock %}</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <!-- load css libs -->
   <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+
+  <!-- load app styles -->
+  <link rel="stylesheet" href="css/union-spravki.css">
 
 </head>
 <body>
@@ -15,6 +18,7 @@
 {% include 'tools/header.twig' %}
 
 {% include 'tools/navigation.twig' %}
+
 
 {#<header>#}
   {#<h1>{% block title %}{% endblock %}</h1>#}
@@ -27,9 +31,18 @@
   {#</nav>#}
 {#</header>#}
 
-<section role="main">
-  {% block body %}{% endblock %}
+<section role="main" class="pl15 pr15">
+  <div class="row">
+    <div class="col-md-2">
+      {% include 'tools/navigation_left.twig' %}
+    </div>
+    <div class="col-md-10">
+      {% block body %}{% endblock %}
+    </div>
+  </div>
 </section>
+
+{% include 'tools/footer.twig' %}
 
 </body>
 </html>
