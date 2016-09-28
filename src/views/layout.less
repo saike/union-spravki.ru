@@ -1,4 +1,5 @@
 @import "mixins";
+@import (reference) "bootstrap/less/bootstrap.less";
 
 @offsets: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
 
@@ -48,11 +49,33 @@
 
 
 //responsive font-sizes
-@responsive_font_sizes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20;
+@responsive_font_sizes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 24, 26, 28, 30, 32, 34;
 
 .for(@responsive_font_sizes, {
-  .rt@{value} {
-    font-size: @value+0vmin !important;
+
+  @media (min-width: @screen-sm) {
+
+    .rt@{value} {
+      font-size: ceil((@value*2.4px)) !important;
+    }
+
   }
+
+  @media (min-width: @screen-md) {
+
+    .rt@{value} {
+      font-size: ceil((@value*1.4px)) !important;
+    }
+
+  }
+
+  @media (min-width: @screen-lg) {
+
+    .rt@{value} {
+      font-size: ceil((@value*1px)) !important;
+    }
+
+  }
+
 });
 

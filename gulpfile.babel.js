@@ -46,7 +46,9 @@ gulp.task('templates', () => {
 
 gulp.task('less', () => {
   gulp.src(paths.less.src)
-    .pipe(less())
+    .pipe(less({
+      paths: ['node_modules', 'src/views']
+    }))
     .pipe(concat('union-spravki.css'))
     .pipe(gulp.dest(paths.less.dist));
 });
