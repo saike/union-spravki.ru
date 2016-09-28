@@ -849,9 +849,9 @@
 .sale .sale_product {
   margin: 20px;
   background: rgba(255, 255, 255, 0.9);
-  border: 2px #000 solid;
   cursor: pointer;
   padding: 10px;
+  border-radius: 4px;
 }
 .badge {
   background-color: rgba(255, 215, 0, 0.9);
