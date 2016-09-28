@@ -380,6 +380,66 @@
 .w100 {
   width: 100% !important;
 }
+.rt1 {
+  font-size: 1vmin !important;
+}
+.rt2 {
+  font-size: 2vmin !important;
+}
+.rt3 {
+  font-size: 3vmin !important;
+}
+.rt4 {
+  font-size: 4vmin !important;
+}
+.rt5 {
+  font-size: 5vmin !important;
+}
+.rt6 {
+  font-size: 6vmin !important;
+}
+.rt7 {
+  font-size: 7vmin !important;
+}
+.rt8 {
+  font-size: 8vmin !important;
+}
+.rt9 {
+  font-size: 9vmin !important;
+}
+.rt10 {
+  font-size: 10vmin !important;
+}
+.rt11 {
+  font-size: 11vmin !important;
+}
+.rt12 {
+  font-size: 12vmin !important;
+}
+.rt13 {
+  font-size: 13vmin !important;
+}
+.rt14 {
+  font-size: 14vmin !important;
+}
+.rt15 {
+  font-size: 15vmin !important;
+}
+.rt16 {
+  font-size: 16vmin !important;
+}
+.rt17 {
+  font-size: 17vmin !important;
+}
+.rt18 {
+  font-size: 18vmin !important;
+}
+.rt19 {
+  font-size: 19vmin !important;
+}
+.rt20 {
+  font-size: 20vmin !important;
+}
 
 
 
@@ -390,7 +450,7 @@
 }
 @media (min-width: 768px) {
   .navigation_left {
-    display: block !important;
+    display: block;
   }
   .navigation_left .navbar-collapse {
     height: auto;

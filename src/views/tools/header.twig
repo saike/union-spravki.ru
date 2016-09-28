@@ -1,19 +1,19 @@
-<div class="header pt20">
+<div class="header">
 
   <div class="container">
 
     <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-12 mt20 mb20">
         <a class="logo ib w100" href="/">
           <img src="/img/logo.png" class="w100" alt="">
         </a>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-4 col-sm-12 mt20 mb20">
         <div class="phone">
 
-          <h5 style="font-size: 16px;">
+          <h5 class="rt5">
             <span>
               <i class="glyphicon glyphicon-phone"></i>
               <a href="tel:{{ CONFIG.phone }}" class="text-danger">
@@ -22,22 +22,14 @@
             </span>
           </h5>
 
-          <h6>
+          <h6 class="rt4">
             Телефон в г. Москве
           </h6>
-
-          {#<a href="#order" class="btn btn-lg btn-primary">#}
-            {#<i class="glyphicon glyphicon-shopping-cart" style="vertical-align: top; margin-top: 1px; margin-right: 8px;"></i>#}
-            {#ЗАКАЗАТЬ#}
-          {#</a>#}
         </div>
 
-      </div>
-
-      <div class="col-md-3">
         <div class="email">
 
-          <h5 style="font-size: 16px;">
+          <h5 class="rt5">
             <span class="no_wrap">
               <i class="glyphicon glyphicon-envelope"></i>
               <a href="mailto:{{ CONFIG.email }}?Subject={{ CONFIG.email_subject | escape }}" target="_top" class="text-danger">
@@ -45,25 +37,20 @@
               </a>
             </span>
           </h5>
-
-          {#<a href="#order" class="btn btn-lg btn-primary">#}
-          {#<i class="glyphicon glyphicon-shopping-cart" style="vertical-align: top; margin-top: 1px; margin-right: 8px;"></i>#}
-          {#ЗАКАЗАТЬ#}
-          {#</a>#}
         </div>
 
       </div>
 
-      <div class="col-md-2">
-        <p class="lead" style="font-size: 16px;">
+      <div class="col-md-2 col-sm-6 mt20 mb20">
+        <p class="lead rt4" style="font-size: 16px;">
           Часы работы: <br>
           с 9:00 до 20:00 <br>
           пн.-пт.
         </p>
       </div>
 
-      <div class="col-md-2">
-        <a href="/zakaz" class="btn btn-primary btn-lg">
+      <div class="col-md-2 col-sm-6 mt20 mb20">
+        <a href="/zakaz" class="btn btn-primary btn-lg rt4">
           <i class="glyphicon glyphicon-shopping-cart" style="margin-right: 8px;"></i>ЗАКАЗАТЬ
         </a>
       </div>
