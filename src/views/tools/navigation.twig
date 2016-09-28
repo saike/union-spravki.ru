@@ -3,7 +3,7 @@
     <ul class="nav navbar-nav">
       {% for _route in routes %}
         <li class="{% if _route.id == route.id %}active{% endif %}">
-          <a class="{{ _route.type }} " href="{{ _route.url }}">{{ _route.name }}</a>
+          <a class="rt14 {{ _route.type }} " href="{{ _route.url }}">{{ _route.name }}</a>
         </li>
       {% endfor %}
     </ul>

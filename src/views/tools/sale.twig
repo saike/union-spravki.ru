@@ -34,11 +34,11 @@
 
   <div class="row">
     {% for product in sale %}
-      <div class="col-md-3">
+      <div class="col-md-2 col-sm-6">
         <a href="{{ product.url }}">
           <div class="sale_product">
             <img class="w100" src="{{ product.image }}" alt="{{ product.name }}">
-            <p class="lead mb0 text-center">
+            <p class="mb0 text-center rt14">
               {{ product.name }}
             </p>
           </div>
