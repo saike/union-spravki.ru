@@ -6,7 +6,8 @@
     "dev": "gulp",
     "start": "forever start ./dist/boot.js",
     "restart": "forever restart ./dist/boot.js",
-    "stop": "forever stop ./dist/boot.js"
+    "stop": "forever stop ./dist/boot.js",
+    "deploy": "npm run stop && git pull && npm run start"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
