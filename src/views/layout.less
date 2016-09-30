@@ -53,15 +53,11 @@
 
 .for(@responsive_font_sizes, {
 
-  @media (min-width: @screen-sm) {
-
-    .rt@{value} {
-      font-size: ceil((@value*2.4px)) !important;
-    }
-
+  .rt@{value} {
+    font-size: ceil((@value*2.4px)) !important;
   }
 
-  @media (min-width: @screen-md) {
+  @media (min-width: @screen-sm) {
 
     .rt@{value} {
       font-size: ceil((@value*1.4px)) !important;
@@ -69,7 +65,7 @@
 
   }
 
-  @media (min-width: @screen-lg) {
+  @media (min-width: @screen-md) {
 
     .rt@{value} {
       font-size: ceil((@value*1px)) !important;

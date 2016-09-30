@@ -1,0 +1,86 @@
+{% extends '../layout.twig' %}
+
+{% block title %}Заказать больничный лист online{% endblock %}
+
+{% block body %}
+
+  <section class="mb40">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12 mb30">
+          <h2>Заказать больничный лист online</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered">
+            <tr>
+              <th class="p20">
+                <h4>Наименование услуги</h4>
+              </th>
+              <th class="p20">
+                <h4>Стоимость</h4>
+              </th>
+            </tr>
+            <tr>
+              <td class="p20">
+                Больничный лист до 7 дней
+              </td>
+              <td class="p20">
+                2000 руб.
+              </td>
+            </tr>
+            <tr>
+              <td class="p20">
+                Больничный лист от 7 дней
+              </td>
+              <td class="p20">
+                от 2000 руб.
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Справка 086-у часто требуется в таких местах как институт, служба, или работа.
+            <br>
+            Не стоит тратить время на очереди в поликлинике!
+            <br>
+            В нашем медицинском центре мы поможем оформить ее в кратчайшие сроки.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <span class="lead">
+            Оформление Больничного листа заднем числом в кратчайшие сроки!
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          Оформляйте Ваш заказ, не отходя от компьютера. 
+          <br>
+           Все что Вам нужно это написать нам или позвонить на номер
+          <a href="tel:{{ CONFIG.phone }}" class="text-danger">
+            <span>{{ CONFIG.phone }}</span>
+          </a>
+          сообщение с Вашим заказом, адресом и номером телефона.  
+          <br>
+          Также Вы можете позвонить нам или оставить Ваш номер телефона, и мы Вам перезвоним!
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+{% endblock %}

@@ -51,6 +51,42 @@ export const routes = [
     name: 'Контакты',
     url: '/contacts',
     template: 'routes/contacts'
+  },
+  {
+    id: '095',
+    name: 'Форма 095/у (Студенческая справка)',
+    url: '/095',
+    template: 'routes/095'
+  },
+  {
+    id: 'bolnichny',
+    name: 'Больничный лист',
+    url: '/bolnichny',
+    template: 'routes/bolnichny'
+  },
+  {
+    id: '086',
+    name: 'Справка 086/у',
+    url: '/086',
+    template: 'routes/086'
+  },
+  {
+    id: 'dispanser',
+    name: 'Справки из диспансеров',
+    url: '/dispanser',
+    template: 'routes/dispanser'
+  },
+  {
+    id: 'bassein',
+    name: 'Справка в бассейн',
+    url: '/bassein',
+    template: 'routes/bassein'
+  },
+  {
+    id: 'beremennost',
+    name: 'Справка о беременности',
+    url: '/beremennost',
+    template: 'routes/beremennost'
   }
 ];
 
